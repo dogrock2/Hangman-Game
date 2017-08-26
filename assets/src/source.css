@@ -1,0 +1,40 @@
+#headerTxt {
+    font-family: 'Sedgwick Ave', cursive;
+    font-size: 70px;
+}
+
+#dashes {
+    font-size: 25px;
+}
+
+#reset {
+    visibility: hidden;
+}
+
+#txtBox {
+    width: 50px;
+}
+
+#myImg {
+    height: 300px;
+    width: 300px;
+}
+
+#hmBody {
+    background-image: url("../images/hang.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-width: 330px;
+}
+
+#indxBody {
+    background-color: transparent;
+}
+
+html {
+    background-image: url("../images/background1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

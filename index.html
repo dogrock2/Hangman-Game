@@ -1,0 +1,65 @@
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HangManMain</title>
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
+    <link rel="stylesheet" href="assets/src/source.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+</head>
+
+<body id="indxBody">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 text-light" id="headerTxt">Hangman.</div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 text-light mt-3">Select Players:</div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input text-light" type="radio" name="inlineRadioOptions" id="radio1" value="option1" checked>
+                      <label class="text-light">1 Player &nbsp;</label>
+                    </label>
+                </div>
+                <div class="form-check form-check-inline ml-0">
+                    <label class="form-check-label">
+                      <input class="form-check-input text-light" type="radio" name="inlineRadioOptions" id="radio2" value="option2">
+                      <label class="text-light">2 Players</label>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-9"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <form>                    
+                    <div class="form-group mt-3">
+                        <label for="textName" class="text-light">Name:</label>
+                        <input type="text" class="form-control" id="inputName"  placeholder="Enter your name">
+                        <br>
+                        <label for="secretWord" class="text-light">Secret Word:</label>
+                        <input type="text" class="form-control" id="inputWord"  placeholder="secret word">
+                        <button type="button" class="btn btn-primary mt-4" id="startButton">PLAY</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-10"></div>
+        </div>
+
+
+    </div>
+    <script src="assets/js/scriptIndex.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
