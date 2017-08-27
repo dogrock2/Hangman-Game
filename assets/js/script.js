@@ -111,21 +111,8 @@ function setIncorrect(){
 
 function reset(){
 	
-	imgDiv.src = 'assets/images/hangmanStart.jpg';
-	txtBox.value = '';
-	correctCnt = 0;
-    errCnt = 0;
-    inWordArr = [];
-    usedChars.innerHTML = '';
-    lblDashes.innerHTML = '';
-    setMsg('');
-    resetBut.style.visibility = 'hidden';
-	inWord = prompt('What is the secret word?');
-	inWord = inWord.toUpperCase();
-	okBut.disabled = false;	
-	lose = false;
-	setDash();
-	setFocus();
+	window.location.href = "index.html"
+
 }//ends reset
 
 function randomWord() {
