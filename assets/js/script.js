@@ -14,6 +14,7 @@ var lose = false;
 var players;
 var playerName;
 var nameSet;
+var lettersUsed = [];
 
 function init(){
 	
@@ -41,7 +42,7 @@ function init(){
 	nameSet.innerHTML += playerName;
 	okBut.onclick = setLetter;
 	resetBut.onclick = reset;	
-    document.onkeydown=function(){
+    document.onkeydown = function(){
 		if(window.event.keyCode=='13'){
 			if(lose == false)
 			   setLetter();
@@ -78,15 +79,18 @@ function setLetter(){
   setError(' ');
   inLetter = txtBox.value;
   inLetter = inLetter.toUpperCase();
-  for( var x = 0; x < inWordArr.length; x++)
-	  if (inLetter == inWord.charAt(x)){
-	      inWordArr[x] = inLetter;	      
-		  flag = true;
-		  correctCnt++;
-	  }
-  if (flag == false)       
-      setIncorrect();     	  
-      
+  
+  if(lettersUsed.indexOf(inLetter) === -1){
+		lettersUsed.push(inLetter);		
+		for( var x = 0; x < inWordArr.length; x++)
+			if (inLetter == inWord.charAt(x)){
+				inWordArr[x] = inLetter;	      
+				flag = true;
+				correctCnt++;
+			}//ends if
+		if (flag == false)       
+			setIncorrect();     	  
+	}//ends top if
   txtBox.value = '';
   setDash();	
   setFocus();
@@ -127,7 +131,7 @@ function randomWord() {
 	 });
  }
  
- function randomWordComplete(data) {	 
+function randomWordComplete(data) {	 
 	inWord = data.Word; 
 	inWord = inWord.toUpperCase();
 	setDash();	
