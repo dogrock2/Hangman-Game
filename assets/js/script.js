@@ -80,7 +80,12 @@ function setLetter(){
   inLetter = txtBox.value;
   inLetter = inLetter.toUpperCase();
   
-  if(lettersUsed.indexOf(inLetter) === -1){
+  if (inLetter === '')
+	alert('No Blanks Please');
+  else if (!/^[a-zA-Z]*$/g.test(inLetter)) 
+	alert('Only Letters Please.')
+  else
+	if(lettersUsed.indexOf(inLetter) === -1){
 		lettersUsed.push(inLetter);		
 		for( var x = 0; x < inWordArr.length; x++)
 			if (inLetter == inWord.charAt(x)){
@@ -118,22 +123,25 @@ function reset(){
 	window.location.href = "index.html"
 
 }//ends reset
-
+ 
 function randomWord() {
-	
-	 var requestStr = "http://setgetgo.com/randomword/get.php";
- 
-	 $.ajax({
-		 type: "GET",
-		 url: requestStr,
-		 dataType: "jsonp",
-		 jsonpCallback: 'randomWordComplete'
+		 
+	 var requestStr = "https://api.wordnik.com/v4/words.json/randomWord?" +
+		 "&minLength=5&maxLength=-1" +
+		 "&api_key=48dd829661f515d5abc0d03197a00582e888cc7da2484d5c7";
+	  $.ajax({
+				type: "GET",
+				url: requestStr,
+				dataType: "json",
+				success : function(data){
+					 randomWordComplete(JSON.stringify(data.word));
+									 },					 
 	 });
- }
- 
+}//ends randomWord
+
 function randomWordComplete(data) {	 
-	inWord = data.Word; 
-	inWord = inWord.toUpperCase();
+	var tempWord = data.replace(/['"]+/g, '');
+	inWord = tempWord.toUpperCase();
 	setDash();	
  }
 
